@@ -3,6 +3,6 @@
     Welcome To your App!
   </h1>
 </div>
-<app-etudiant-eval></app-etudiant-eval>
-<app-etudiant-eval></app-etudiant-eval>
-<app-etudiant-eval></app-etudiant-eval>
+<app-etudiant-eval [etudiant]="student1" *ngIf="student1.bonus > 4"></app-etudiant-eval>
+<app-etudiant-eval [etudiant]="student2"></app-etudiant-eval>
+<app-etudiant-eval [etudiant]="student3"></app-etudiant-eval>

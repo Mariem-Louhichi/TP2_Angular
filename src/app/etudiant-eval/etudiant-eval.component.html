@@ -1,3 +1,10 @@
-<h1 [innerText]="prenom"></h1>
-<button (click) = "onClick()">Bonus!</button>
-<p>You have clicked {{clickCount}}</p>
+<div class="etudiant-eval-fiche">
+    <h2> {{etudiant.prenom}}</h2>
+    <p>fait partie de {{etudiant.classe}}</p>
+    <p> {{ etudiant.comment }} </p>
+    <p>
+        <button (click)="onClick()">Je mérite un bonus!</button>
+        note: {{etudiant.bonus}}
+    </p>
+    <p *ngIf="etudiant.experienceAngular=='pfa'">Experience: {{ etudiant.experienceAngular }}</p>
+</div>

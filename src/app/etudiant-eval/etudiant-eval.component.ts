@@ -1,30 +1,18 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { EtudiantEval } from '../models/etudiant-eval.model';
 
 @Component({
   selector: 'app-etudiant-eval',
   templateUrl: './etudiant-eval.component.html',
   styleUrls: ['./etudiant-eval.component.scss']
 })
-export class EtudiantEvalComponent {
-  prenom!: string;
-  classe!: string;
-  comment!: string;
-  bonus!: number;
+export class EtudiantEvalComponent implements OnInit {
+  @Input() etudiant!: EtudiantEval;
 
   ngOnInit() {
-    this.prenom = "Maryouma";
-    this.classe = '3GT TST :)';
-    this.comment = "";
-    this.bonus = 0;
   }
 
-  getPrenom(): string{
-    return this.prenom;
-  }
-
-  isDisabled=true;
-  clickCount = 0
   onClick(){
-    this.clickCount++;
+    this.etudiant.bonus++;
   }
 }
