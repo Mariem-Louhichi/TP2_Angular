@@ -8,3 +8,9 @@
     </p>
     <p *ngIf="etudiant.experienceAngular=='pfa'">Experience: {{ etudiant.experienceAngular }}</p>
 </div>
+<div [ngSwitch]="etudiant.bonus">
+    <div *ngSwitchCase="0">Rien</div>
+    <div *ngSwitchCase="2">+0.5 à l'examen</div>
+    <div *ngSwitchCase="5">+1 à l'examen</div>
+    <div *ngSwitchDefault>---</div>
+</div>

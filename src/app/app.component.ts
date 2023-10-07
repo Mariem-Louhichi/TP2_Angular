@@ -7,29 +7,12 @@ import { EtudiantEval } from './models/etudiant-eval.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  student1!:EtudiantEval;
-  student2!:EtudiantEval;
-  student3!:EtudiantEval;
-
-  ngOnInit(){
-    this.student1 = new EtudiantEval(
-      'Maryoumaaa',
-      'GT TST',
-      'Brillante!',
-      6,
-      'pfa'
-    );
-    this.student2 = new EtudiantEval(
-      'Mohamed',
-      'GT TST',
-      'Moyenne!',
-      2,
-    );
-    this.student3 = new EtudiantEval(
-      'Aloulou',
-      'GT TST',
-      'Tres moyenne!',
-      1,
-    );
+  etudiants!: EtudiantEval[];
+  ngOnInit() {
+    this.etudiants=[
+      new EtudiantEval('Maryoumaa','GT TST','Brillant!',6),
+      new EtudiantEval('Mohamed','GT TST','Moyenne!',2),
+      new EtudiantEval('Aloulou','GT TST','Tres bon!',3)
+    ]
   }
 }
