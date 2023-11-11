@@ -1,9 +1,16 @@
+<form #identificationForm="ngForm"(ngSubmit)="onSubmitForm(identificationForm)">
+    <label for="nomInput">Identifiez-vous !</label>
+    <input id="nomInput" name="prenomEnseignant"type="text"[(ngModel)]="prenomEnseignant">
+    <button type="submit">OK!</button>
+    <p>You enterred {{prenomEnseignant}}</p>
+</form>
 <div class="etudiant-eval-fiche">
-    <h2> {{etudiant.prenom}}</h2>
+    <h2> {{etudiant.prenom | uppercase }}</h2>
     <p>fait partie de {{etudiant.classe}}</p>
     <p> {{ etudiant.comment }} </p>
     <p>
-        <button (click)="onClick()">Je mérite un bonus!</button>
+        <button (click)="onClick(1)">Je mérite un bonus!</button>
+        <button (click)="onClick(0)">Je perds un bonus!</button>
         note: {{etudiant.bonus}}
     </p>
     <p *ngIf="etudiant.experienceAngular=='pfa'">Experience: {{ etudiant.experienceAngular }}</p>
@@ -14,3 +21,10 @@
     <div *ngSwitchCase="5">+1 à l'examen</div>
     <div *ngSwitchDefault>---</div>
 </div>
+<p>Inscription lle {{etudiant.inscriDate | date}}</p>
+<p>Inscription lle {{etudiant.inscriDate | date:'longDate'}}</p>
+<p>Inscription lle {{etudiant.inscriDate | date:'short'}}</p>
+<p>Inscription lle {{etudiant.inscriDate | date:'mediumTime'}}</p>
+<p>Inscription lle {{etudiant.inscriDate | date:'dd/MM/yy,à HH:mm'}}</p>
+<p>Inscription lle {{etudiant.inscriDate | date:'à HH:mm,le d MMMM yyy'}}</p>
+
